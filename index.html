@@ -1,374 +1,616 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EFFICIENT DENSE MATCHING FOR ENHANCED GAUSSIAN SPLATTING USING AV1 MOTION VECTORS</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://sigmedia.tv">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Efficient Dense Matching for Enhanced Gaussian Splatting Using AV1 Motion Vectors">
+        <meta name="keywords" content="AV1, 3DGS, SfM">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Efficient Dense Matching for Enhanced Gaussian Splatting Using AV1 Motion Vectors</title>
+    
+        <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    
+        <link rel="stylesheet" href="./static/css/bulma.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="./static/css/index.css">
+        <link rel="icon" href="./static/images/favicon.png">
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer="" src="./static/js/fontawesome.all.min.js"></script>
+        <script src="./static/js/bulma-carousel.min.js"></script>
+        <script src="./static/js/bulma-slider.min.js"></script>
+        <script src="./static/js/index.js"></script>
+        <script>
+            MathJax = {
+                tex: { inlineMath: [['$','$'], ['\\(','\\)']] }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    </head>
+    <body>
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
         </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Efficient Dense Matching for Enhanced Gaussian Splatting Using AV1 Motion Vectors</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://sigmedia.tv/team/julien-zouein">Julien Zouein</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://sigmedia.tv/team/vibhoothi/">Vibhoothi Vibhoothi</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://sigmedia.tv/team/francois-pitie">François Pitié</a><sup>1</sup>,
+        <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="http://fungraph.inria.fr">
+            <span class="icon">
+                <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><!-- <i class="fas fa-home"></i> Font Awesome fontawesome.com -->
             </span>
-            <span class="author-block">
-              <a href="https://sigmedia.tv/team/anil-kokaram">Anil Kokaram</a><sup>1</sup>,
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Sigmedia Research Group, Trinity College Dublin</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
+            </a>
+    
+            <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                More Research
+            </a>
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://project.inria.fr/fungraph/publications/">
+                Fungraph Publications
                 </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. 
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span> -->
-              <!-- Dataset Link.
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-              </span> -->
             </div>
-
-          </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/sfm_gs.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Re-use features from the encoder to enhance 3D Gaussian Splatting.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            3D Gaussian Splatting (3DGS) has emerged as a prominent framework for real-time, 
-            photorealistic scene reconstruction, offering significant speed-ups over Neural 
-            Radiance Fields (NeRF). However, the fidelity of 3DGS representations remains 
-            heavily dependent on the quality of the initial point cloud. While standard 
-            Structure-from-Motion (SfM) pipelines using COLMAP provide adequate 
-            initialisation, they often suffer from high computational costs and sparsity in 
-            textureless regions, which degrades subsequent reconstruction accuracy and 
-            convergence speed. In this work, we introduce an AV1-based feature detection and 
-            matching pipeline that significantly reduces SfM processing overhead. By leveraging 
-            motion vectors inherent to the AV1 video codec, we bypass computationally expensive 
-            exhaustive matching while maintaining geometric robustness. Our pipeline produces 
-            substantially denser point clouds, with up to eight times as many points as classical 
-            SfM. We demonstrate that this enhanced initialisation directly improves 3DGS performance, 
-            yielding an 9-point increase in VMAF and a 63\% average reduction in training time required 
-            to reach baseline quality.
-          </p>
+    
         </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
+    </nav>
+    
+    
+    <section class="hero">
+        <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">Efficient Dense Matching <br> for Enhanced Gaussian Splatting Using AV1 Motion Vectors</h1>
+                <h1 style="font-size:1.5rem"> International Conference on Image Processing </h1>
+                <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <a href="https://sigmedia.tv/team/julien-zouein">Julien Zouein</a>,</span>
+                    <span class="author-block">
+                      <a href="https://sigmedia.tv/team/vibhoothi/">Vibhoothi Vibhoothi</a>,</span>
+                    <span class="author-block">
+                      <a href="https://sigmedia.tv/team/francois-pitie">François Pitié</a>,
+                    </span>
+                    <span class="author-block">
+                      <a href="https://sigmedia.tv/team/anil-kokaram">Anil Kokaram</a>,
+                    </span>
+                  </div>
 
-<section class="section">
-  <div class="container is-max-desktop">
+                <div class="is-size-5 publication-authors">
+                    <span class="author-block">Sigmedia Research Group, Trinity College Dublin</span>
+                </div>
+    
+                <div class="is-size-5 publication-authors" style="display: flex; align-items: center; justify-content: center;">
+                <a href="https://www.tcd.ie/" style="margin-right: 15px;"><img style="width: 30vw; max-width: 500px; min-width: 100px;" src="static/images/TCD_RGB-01.svg"></a>
+                <a href="https://sigmedia.tv/"><img style="width: 30vw; max-width: 500px; min-width: 100px;" src="static/images/sigmedia-logo-white.webp"></a>
+                </div>
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+                <div class="column has-text-centered">
+                <div class="publication-links">
+                    <span class="link-block">
+                    <a href="3d_gaussian_splatting_high.pdf" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Paper</span>
+                    </a>
+                    </span>
+                    <span class="link-block">
+                    <a href="https://github.com/sigmedia/AV1-3D-Reconstruction" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Code</span>
+                        </a>
+                </div>
+                </div>
+    
+            </div>
+            </div>
         </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
+        </div>
+    </section>
+    
+    <!--
+    <section class="hero teaser">
+        <div class="container">
+        <div class="hero-body">
+            <img src="content/images/CatacausticGeometry.svg">
+            <h2 class="subtitle has-text-centered">
+            The geometry of catacaustics: <i>(a)</i> In the case of a planar reflector, a reflected point <b>P</b> results in a static virtual point <b>p</b>, independent of camera position <b>c</b>. <i>(b)</i> For curved reflectors (here a convex example), camera motion leads to <b>p</b> tracing a surface, called catacaustic. <i>(c)</i> The catacaustic for a single point <b>P</b> is defined by the envelope of virtual reflected rays, depicted as the bold orange curve, which at each point is tangent to one of the virtual reflected rays. Virtual images of <b>P</b> are formed only on the catacaustic trajectory. <i>(d)</i> In a point-based rendering setup, where the tangent constraint is not satisfied, the trajectory of virtual points is not unique. An infinite number of trajectories (three examples are shown) lead to the same apparent reflection. Reflection rays are omitted for clarity.
+            </h2>
+        </div>
+        </div>
+    </section>
+    -->
+    
+    <section class="hero is-light is-small">
+        <div class="hero-body">
+        <div class="container">
+            <video id="teaser" autoplay muted loop playsinline style="width: 100%; height: auto;">
+                <source src="static/videos/sfm_gs_cropped.mp4"
+                        type="video/mp4">
             </video>
-          </div>
-
+            <h2 class="subtitle has-text-centered">
+            Re-using features from the encoder to enhance 3D Gaussian Splatting.
         </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        
+    </section>
+    <section class="section">
+        <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+                <p>
+                    3D Gaussian Splatting (3DGS) has emerged as a prominent framework for real-time, photorealistic scene reconstruction, 
+                    offering significant speed-ups over Neural Radiance Fields (NeRF). However, the fidelity of 3DGS representations 
+                    remains heavily dependent on the quality of the <b>initial point cloud</b>. While standard Structure-from-Motion (SfM) 
+                    pipelines using COLMAP provide adequate initialisation, they often suffer from high computational costs and sparsity 
+                    in textureless regions, which degrades subsequent reconstruction accuracy and convergence speed.<br><br>
+                </p>
+    
+                <p>
+                    In this work, we introduce an <b>AV1-based feature detection and matching</b> pipeline that significantly reduces SfM processing 
+                    overhead. By leveraging motion vectors inherent to the AV1 video codec, we bypass computationally expensive exhaustive 
+                    matching while maintaining geometric robustness. Our pipeline produces substantially denser point clouds, with up to <b>eight 
+                    times</b> as many points as classical SfM. <br><br>
+                </p>
+    
+                    We demonstrate that this enhanced initialisation directly improves 3DGS performance, yielding an <b>9-point increase in VMAF</b> 
+                    and a <b>63\% average reduction in training time</b> required to reach baseline quality.
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
+            <!--
+            <div class="content has-text-justified">
+                <p>
+                View-dependent effects such as <i>reflections</i> pose a substantial challenge for image-based and neural rendering algorithms. Above all, curved reflectors are particularly hard, as they lead to highly non-linear reflection flows as the camera moves. 
+                </p>
+                <p>
+                We introduce a new <i>point-based representation</i> to compute <b>Neural Point Catacaustics</b> allowing novel-view synthesis of scenes with curved reflectors, from a set of casually-captured input photos. At the core of our method is a <b>neural warp field</b> that models catacaustic trajectories of reflections, so complex specular effects can be rendered using efficient point splatting in conjunction with a neural renderer. One of our key contributions is the explicit representation of reflections with a reflection point cloud which is displaced by the neural warp field, and a primary point cloud which is optimized to represent the rest of the scene. After a short manual annotation step, our approach allows <b>interactive high-quality renderings of novel views with accurate reflection flow.</b>
+                </p>
+                <p>
+                Additionally, the explicit representation of reflection flow supports several forms of scene manipulation in captured scenes, such as reflection editing, cloning of specular objects, reflection tracking across views, and comfortable stereo viewing.
+                </p>
+            </div>
+            -->
+            </div>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
+        </div>
+    </section>
+  
+    <section class="section">
+        <div class="container is-max-desktop">
+        <h2 class="title is-3">Evaluation</h2>
+        <div class="content has-text-justified">
+            <p>
+            Our evaluation focuses on the downstream impact of these denser point clouds on 3DGS performance. Hence we compare output from proposed AV1-based pipeline against state-of-the-art SfM techniques. 
+            In particular, we tested our approach against: (1) SIFT features + <i>Exhaustive</i> matching, (2) SIFT Features + <i>Sequential</i> Matching, (3) <i>DISK</i>[Tyszkiewicz 2020] features with LightGlue[Lindenberger 2023] 
+            and (4) <i>SuperPoint</i>[DeTone 2018] features with Superglue[Sarlin 2020]. (1) serves as baseline, being the default configuration in COLMAP[Schonberger 2016].<br>
+            Our dataset comprises seven video sequences categorised by their source and content characteristics. Complex urban environments, handheld urban scenes and high details
+            </p>
+        </div>
+        </div>
+    </section>
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+    <section class="section">
+      <div class="container is-max-desktop">
+      <h2 class="title is-3">Visual Comparisons</h2>
+      <div class="columns is-centered">
+          <div class="column">
+              <p class="has-text-centered has-text-weight-bold mb-2">Boston Vid. 1</p>
+              <div class="img-slider">
+                  <img src="static/images/boston_vid_1_nvenc_patch.png" draggable="false">
+                  <img src="static/images/boston_vid_1_exhaustive_patch.png" class="img-top" draggable="false" style="clip-path:inset(0 50% 0 0);">
+                  <div class="img-slider-line" style="left:50%;"></div>
+                  <span class="img-slider-label-left">Baseline</span>
+                  <span class="img-slider-label-right">Ours</span>
+              </div>
+
+              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Nature</p>
+              <div class="img-slider">
+                  <img src="static/images/nature_nvenc_patch.png" draggable="false">
+                  <img src="static/images/nature_exhaustive_patch.png" class="img-top" draggable="false" style="clip-path:inset(0 50% 0 0);">
+                  <div class="img-slider-line" style="left:50%;"></div>
+                  <span class="img-slider-label-left">Baseline</span>
+                  <span class="img-slider-label-right">Ours</span>
+              </div>
+          </div>
+
+          <div class="column">
+              <p class="has-text-centered has-text-weight-bold mb-2">Paris Seq. 1</p>
+              <div class="img-slider">
+                  <img src="static/images/paris_seq_1_nvenc_patch.png" draggable="false">
+                  <img src="static/images/paris_seq_1_exhaustive_patch.png" class="img-top" draggable="false" style="clip-path:inset(0 50% 0 0);">
+                  <div class="img-slider-line" style="left:50%;"></div>
+                  <span class="img-slider-label-left">Baseline</span>
+                  <span class="img-slider-label-right">Ours</span>
+              </div>
+
+              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Kitti Seq. 10</p>
+              <div class="img-slider">
+                  <img src="static/images/kitti_10_nvenc_cropped.png" draggable="false">
+                  <img src="static/images/kitti_10_exhaustive_cropped.png" class="img-top" draggable="false" style="clip-path:inset(0 50% 0 0);">
+                  <div class="img-slider-line" style="left:50%;"></div>
+                    <span class="img-slider-label-left">Baseline</span>
+                  <span class="img-slider-label-right">Ours</span>
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <style>
+        .img-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            cursor: col-resize;
+            user-select: none;
+            border-radius: 6px;
+        }
+        .img-slider > img:first-child {
+            display: block;
+            width: 100%;
+        }
+        .img-slider .img-top {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .img-slider-line {
+            position: absolute;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: #fff;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 6px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+        .img-slider-label-left,
+        .img-slider-label-right {
+            position: absolute;
+            bottom: 8px;
+            padding: 3px 8px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            pointer-events: none;
+            z-index: 11;
+        }
+        .img-slider-label-left  { left: 8px; }
+        .img-slider-label-right { right: 8px; }
+      </style>
+
+      <script>
+        document.querySelectorAll('.img-slider').forEach(function(el) {
+            var top = el.querySelector('.img-top');
+            var line = el.querySelector('.img-slider-line');
+            var dragging = false;
+
+            function move(e) {
+                var rect = el.getBoundingClientRect();
+                var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+                var pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+                top.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+                line.style.left = pct + '%';
+            }
+
+            el.addEventListener('mousedown', function(e) { e.preventDefault(); dragging = true; move(e); });
+            el.addEventListener('touchstart', function(e) { dragging = true; move(e); }, {passive: true});
+            window.addEventListener('mousemove', function(e) { if (dragging) move(e); });
+            window.addEventListener('touchmove', function(e) { if (dragging) move(e); }, {passive: true});
+            window.addEventListener('mouseup', function() { dragging = false; });
+            window.addEventListener('touchend', function() { dragging = false; });
+        });
+      </script>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+      <h2 class="title is-3">Convergence and Geometric Debt</h2>
+      <div class="content has-text-justified">
+          <p>
+            A primary contribution of this work is the marked improvement in convergence efficiency.
+            In standard 3DGS workflows, the optimiser spends thousands of iterations generating new 
+            Gaussians to fill the structural voids left by sparse SfM. By providing high-density 
+            initialisation at the start, AV1-SfM allows the GPU to focus its computational budget on 
+            refining colour and covariance parameters immediately. This results in a 63% reduction 
+            in the total training time required to reach baseline quality (averaged over all sequences). <br>
+            The graphs below, show the evolution of VMAF value during training for both Train and Test data from the Nature Sequence.
+            We can see that our result (in Green) has a headstart compared to the other techniques and reaches values way higher than the baseline (in Red) at the same iteration.
+          </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+        <div class="columns is-centered">
+            <div class="column content">
+            <img src="static/images/nature_train_VMAF-1.png" alt="VMAF value during training on Train Data">
+            VMAF value during training on Train Data for Nature.
+            </div>
+        </div>
+        </div>
+        
+        <!--/ Visual Effects. -->
+
+        <!-- Matting. -->
+        <div class="column">
+        <div class="columns is-centered">
+            <div class="column content">
+            <img src="static/images/nature_test_VMAF-1.png" alt="VMAF value during training on Test Data">
+            VMAF value during training on Test Data for Nature.
+            </div>
+        </div>
+        </div>
+
+  </section>
+    
+    <section class="section">
+        <div class="container is-max-desktop">
+        <h2 class="title is-3">3D Point Clouds Comparison</h2>
+        <div class="content has-text-justified">
+            <p>
+                The proposed AV1-SfM framework aims to bridge the gap between sparse feature matching and dense reconstruction by leveraging motion vectors inherent to the AV1 bitstreams.
+                As the evaluation sequences consist primarily of User Generated Content (UGC), ground truth 3D reconstructions are unavailable. Consequently, point clouds generated via 
+                SIFT keypoints with exhaustive matching—the default pipeline for COLMAP and 3D Gaussian Splatting—serve as the baseline for comparison.
+            </p>
+        </div>
+        <h4 class="title is-4">3D reconstruction Fidelity</h4>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+              We adopt two <i>standard</i> point-cloud distances to quantify reconstruction quality, computed between each method and the baseline (SIFT + Exhaustive Matching). <br><br> 
+              With $P_1=\{x_i\}_{i=1}^{n}$ and $P_2=\{x_j\}_{j=1}^{m}$:
+
+              \begin{equation}
+              \begin{aligned}
+              \textstyle CD(P_1,P_2)
+              &= \frac{1}{2n}\sum_{i=1}^{n}\min_{b\in P_{2}}\|x_{i}-b\| \\
+              &\quad + \frac{1}{2m}\sum_{j=1}^{m}\min_{a\in P_{1}}\|x_{j}-a\| .
+              \end{aligned}
+              \end{equation}
+
+              \begin{equation}
+              \begin{aligned}
+              \textstyle HD(P_1,P_2)
+              &= \tfrac{1}{2}\Big( \max_{a\in P_{1}}\min_{b\in P_{2}}\|a-b\| \\
+              &\quad + \max_{b\in P_{2}}\min_{a\in P_{1}}\|b-a\| \Big).
+              \end{aligned}
+              \end{equation}
+
+              The Chamfer distance reflects overall shape similarity; the Hausdorff distance captures the worst-case discrepancy between point clouds. Additionally, we record the
+              mean reprojection error reported by COLMAP (average residual in pixels) as a measure of self-consistency. <br><br>
+
+              The results are shown in the table below.
           </p>
+      </div>
+
+      <h4 class="title is-4">Density and geometric consistency</h4>
+        <div class="content has-text-justified">
+          <p>
+            he most significant result in the Table above is the massive increase in point density provided by AV1-SfM. On average, 
+            our method generates 14 times more 3D points than the Exhaustive baseline. For instance, in Boston Vid 1, AV1-SfM produces 1.7M points, whereas the baseline yields only 54k. <br><br>
+            Crucially, this density does not come at the cost of accuracy. Our method achieves the lowest Mean Reprojection Error (MRE) in a majority of the sequences (e.g., 0.36 for Boston Vid 1 vs. 0.81 for Exhaustive).
+             Maintaining a sub-pixel MRE while scaling the point count by an order of magnitude demonstrates that the motion vectors extracted from the AV1 bitstream provide highly reliable correspondence for dense reconstruction.
+          </p>
+      </div>
+
+      <p class="has-text-centered is-size-6 mb-3"><em>Comparison of Structure from Motion methods across reconstructed 3D point clouds. The proposed AV1-SfM generates denser point clouds and despite the order-of-magnitude difference in point count, overall accuracy is similar.</em></p>
+      <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
+        <thead>
+          <tr>
+            <th>Sequence</th><th>Metric</th><th>Exhaustive</th><th>Sequential</th><th>SP</th><th>Disk</th><th>AV1-SfM (ours)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="4"><strong>Boston Vid 1</strong></td><td>#3D points</td><td>54k</td><td>52k</td><td>11k</td><td>19k</td><td><strong>1.7M</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.81</td><td>0.77</td><td>1.61</td><td>1.18</td><td><strong>0.36</strong></td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td>8.93</td><td>6.93</td><td>6.32</td><td><strong>0.34</strong></td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>7.25</td><td>6.19</td><td>6.13</td><td><strong>1.78</strong></td></tr>
+
+          <tr><td rowspan="4"><strong>Dublin Seq 1</strong></td><td>#3D points</td><td>47k</td><td>40k</td><td>23k</td><td>64k</td><td><strong>406k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.76</td><td>0.67</td><td>1.46</td><td>1.33</td><td><strong>0.62</strong></td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td><strong>0.23</strong></td><td>0.32</td><td>0.58</td><td>0.57</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>35.26</td><td>30.87</td><td><strong>25.54</strong></td><td>34.99</td></tr>
+
+          <tr><td rowspan="4"><strong>Kitti Seq 00</strong></td><td>#3D points</td><td>59k</td><td>54k</td><td>24k</td><td>89k</td><td><strong>566k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.42</td><td><strong>0.38</strong></td><td>1.17</td><td>0.96</td><td>0.65</td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td>2.49</td><td>2.80</td><td><strong>1.28</strong></td><td>2.26</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>101.50</td><td><strong>73.19</strong></td><td>118.40</td><td>125.78</td></tr>
+
+          <tr><td rowspan="4"><strong>Kitti Seq 10</strong></td><td>#3D points</td><td>32k</td><td>27k</td><td>9k</td><td>60k</td><td><strong>324k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.37</td><td><strong>0.35</strong></td><td>1.06</td><td>0.96</td><td>0.63</td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td>1.97</td><td><strong>0.65</strong></td><td>2.61</td><td>3.24</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>57.48</td><td><strong>42.42</strong></td><td>68.05</td><td>75.48</td></tr>
+
+          <tr><td rowspan="4"><strong>Nature</strong></td><td>#3D points</td><td>46k</td><td>43k</td><td>33k</td><td>53k</td><td><strong>755k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>1.10</td><td>1.07</td><td>1.50</td><td>1.40</td><td><strong>0.89</strong></td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td><strong>0.09</strong></td><td>0.32</td><td>0.73</td><td>0.30</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>61.17</td><td><strong>55.92</strong></td><td>60.14</td><td>58.50</td></tr>
+
+          <tr><td rowspan="4"><strong>Paris Seq 1</strong></td><td>#3D points</td><td>48k</td><td>45k</td><td>29k</td><td>86k</td><td><strong>621k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.56</td><td>0.53</td><td>1.35</td><td>1.07</td><td><strong>0.51</strong></td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td><strong>2.69</strong></td><td>2.78</td><td>3.03</td><td>2.94</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td>30.26</td><td>74.84</td><td>86.76</td><td><strong>29.97</strong></td></tr>
+
+          <tr><td rowspan="4"><strong>Paris Seq 2</strong></td><td>#3D points</td><td>61k</td><td>55k</td><td>34k</td><td>70k</td><td><strong>425k</strong></td></tr>
+          <tr><td>Mean Reproj Error</td><td>0.68</td><td><strong>0.63</strong></td><td>1.39</td><td>1.27</td><td>0.69</td></tr>
+          <tr><td>Chamfer distance</td><td>0.00</td><td><strong>1.39</strong></td><td>2.70</td><td>2.78</td><td>2.79</td></tr>
+          <tr><td>Hausdorff distance</td><td>0.00</td><td><strong>33.77</strong></td><td>43.96</td><td>61.91</td><td>53.24</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h4 class="title is-4">The ``Hausdorff Paradox'' and Baseline Failures</h4>
+        <div class="content has-text-justified">
+          <p>
+            V1-SfM occasionally reports higher Chamfer and Hausdorff distances relative to the Exhaustive baseline (e.g., Kitti Seq 00). However, a qualitative cross-reference with 
+            an analysis of rendered 3D points clouds reveals that this is a metric artifact caused by baseline failure. The Exhaustive method fails to reconstruct significant portions of the scene in Kitti Seq 00 and Paris Seq 2.
+            Because the Exhaustive reconstruction is used as the ``ground truth'' for the distance metrics, AV1-SfM is statistically penalised for reconstructing geometry that the baseline missed entirely. 
+          </p>
+      </div>
+
+      <h4 class="title is-4">Camera trajectory evaluation</h4>
+        <div class="content has-text-justified">
+          <p>
+            To assess the accuracy of our reconstructed camera poses, we compute the Absolute Trajectory Error (ATE) between our estimated camera trajectory and a reference trajectory. ATE measures the translational error between 
+            corresponding camera positions in the two trajectories after aligning them with a similarity transformation (rotation, translation, and scale). We report both the median ATE and Root Mean Square Error (RMSE) across all
+             camera positions. The median provides a robust measure of central tendency that is less sensitive to outliers than the mean, whilst RMSE penalises larger errors more heavily and gives a comprehensive view of the overall 
+             trajectory accuracy. This evaluation is particularly important for applications such as autonomous navigation or augmented reality, where accurate camera localisation is crucial. We compute ATE using the standard evaluation 
+             tools, first aligning the trajectories with a 7-degree-of-freedom transformation, then computing the distance between corresponding camera centers. <br><br>
+             Because monocular SfM has unknown global scale, we first perform a single global 7-DoF Sim(3) alignment (Umeyama) between estimated camera centers and KITTI ground truth, applied once per sequence and identically to all methods. 
+             The similarity $(s,R,t)$ is estimated with a 3-point RANSAC wrapper around Umeyama (threshold $\tau=1.0$\,m), using paired camera centers ($C=-R_{wc}^\top t_{wc}$ for COLMAP; the translation column for KITTI). <br><br>
+             the proposed method has a median Absolute Trajectory Error (ATE) of 0.51 meters while baseline has a median ATE of 3.3 meters over both sequences. Baseline has a RMSE of 15.07 meters while the proposed method has a RMSE of 3.74 over both sequences.
+             The Figures below show trajectories for our method (AV1 SfM) on top compared to baseline (SIFT + Exhaustive matching) on the bottom.
+          </p>
+      </div>
+
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column">
+                <p class="has-text-centered has-text-weight-bold mb-2">Kitti Seq 00 (Ours)</p>
+                  <img src="static/images/traj_alignment_sim3_nvenc_00.png" draggable="false">
+                <p class="has-text-centered has-text-weight-bold mb-2">Kitti Seq 00 (Baseline)</p>
+                  <img src="static/images/traj_alignment_sim3_exhaustive_00.png" draggable="false">
+            </div>
+  
+            <div class="column">
+              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Kitti Seq 10 (Ours)</p>
+                  <img src="static/images/traj_alignment_sim3_nvenc_10.png" draggable="false">
+              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Kitti Seq 10 (Baseline)</p>
+                  <img src="static/images/traj_alignment_sim3_exhaustive_10.png" draggable="false">
+            </div>
         </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    <!-- <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@Article{kerbl3Dgaussians,
+            author       = {Kerbl, Bernhard and Kopanas, Georgios and Leimk{\"u}hler, Thomas and Drettakis, George},
+            title        = {3D Gaussian Splatting for Real-Time Radiance Field Rendering},
+            journal      = {ACM Transactions on Graphics},
+            number       = {4},
+            volume       = {42},
+            month        = {July},
+            year         = {2023},
+            url          = {https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/}
+    }</code></pre>
+        </div><div class="columns is-centered">
+            <div class="column">
+            <div class="columns is-centered">
+                <div class="column content">
+                <img src="content/images/Artboard 19.png" alt="Graph for quality evaluation">
+                </div>
+            </div>
+            </div> -->
+            
+            <!-- / Visual Effects.
+    
+            Matting.
+            <div class="column">
+            <div class="columns is-centered">
+                <div class="column content">
+                <img src="content/images/Artboard 22.png" alt="Graph for perfomance evaluation">
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section> -->
+    
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3">Acknowledgments and Funding</h2>
+            <div class="is-size-5 publication-authors" style="display: flex; align-items: center; justify-content: center;">
+              <a href="https://www.upf.edu/web/emerald" style="margin-right: 15px;"><img style="width: 10vw; max-width: 200px; min-width: 100px;" src="static/images/emerald.svg"></a>
+              <a href="https://about.google/" style="margin-right: 15px;" ><img style="width: 10vw; max-width: 200px; min-width: 100px;" src="static/images/Google.png"></a>
+              <a><img style="width: 5vw; max-width: 200px; min-width: 50px;" src="static/images/youtube.png"></a>
+            </div>
+            <p>
+              This work was funded by the Horizon CL4 2022, EU Project Emerald, 101119800; and YouTube & Google Faculty Awards.
+            </p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+            <h2 class="title is-3">References</h2>
+    
+            <div class="content has-text-justified">
+                <p>
+                [Müller 2022] Müller, T., Evans, A., Schied, C. and Keller, A., 2022. Instant neural graphics primitives with a multiresolution hash encoding
+                </p>
+                <p>
+                [Hedman 2018] Hedman, P., Philip, J., Price, T., Frahm, J.M., Drettakis, G. and Brostow, G., 2018. Deep blending for free-viewpoint image-based rendering. ACM Transactions on Graphics (TOG), 37(6), pp.1-15.
+                </p>
+                <p>
+                [Barron 2022] Barron, Jonathan T., et al. "Mip-nerf 360: Unbounded anti-aliased neural radiance fields." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
+                </p>  
+                <p>
+                [Fridovich-Keil and Yu 2022] Fridovich-Keil, Sara, et al. "Plenoxels: Radiance fields without neural networks." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
+                    </p>
+                    <p>
+                    [Knapitsch 2017] Knapitsch, Arno, et al. "Tanks and temples: Benchmarking large-scale scene reconstruction." ACM Transactions on Graphics (ToG) 36.4 (2017): 1-13.
+                    </p>
+            </div>
+            </div>
+        </div>
+        <!--/ Concurrent Work. -->
+        </div>
+    </section>
+    
+    
+    
+    
+    <footer class="footer">
+        <div class="container">
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
+            <a class="icon-link" href="http://www-sop.inria.fr/reves/Basilic/2021/KPLD21/">
+            <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+            </a>
+            <a class="icon-link" href="#top" disabled="">
+            <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+            </a>
         </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
+        <div class="columns is-centered">
+            <div class="column is-8">
+            <div class="content">
+                <p>
+                We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a> that kindly open sourced the template of this website.
+                </p>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/av1_3dgs_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/zwayn" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a> that kindly open sourced the template of this website.
-          </p>
         </div>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
+    
+    
+    
+    
+    
+    </body>
 
-</body>
-</html>
+  </html>
