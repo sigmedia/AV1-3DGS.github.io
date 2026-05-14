@@ -1,6 +1,6 @@
 # Nerfies
 
-This is the repository that contains source code for the [AV1 for 3DGS website](https://AV1-3DGS.github.io).
+This is the repository that contains source code for the [AV1 for 3DGS website](https://sigmedia.tv/AV1-3DGS.github.io/).
 
 This code is inspired by Nerfies project page.
 
