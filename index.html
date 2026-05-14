@@ -252,74 +252,6 @@
       </div>
       </div>
 
-      <style>
-        .img-slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            cursor: col-resize;
-            user-select: none;
-            border-radius: 6px;
-        }
-        .img-slider > img:first-child {
-            display: block;
-            width: 100%;
-        }
-        .img-slider .img-top {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-        }
-        .img-slider-line {
-            position: absolute;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background: #fff;
-            transform: translateX(-50%);
-            z-index: 10;
-            box-shadow: 0 0 6px rgba(0,0,0,0.5);
-            pointer-events: none;
-        }
-        .img-slider-label-left,
-        .img-slider-label-right {
-            position: absolute;
-            bottom: 8px;
-            padding: 3px 8px;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            font-size: 12px;
-            border-radius: 3px;
-            pointer-events: none;
-            z-index: 11;
-        }
-        .img-slider-label-left  { left: 8px; }
-        .img-slider-label-right { right: 8px; }
-      </style>
-
-      <script>
-        document.querySelectorAll('.img-slider').forEach(function(el) {
-            var top = el.querySelector('.img-top');
-            var line = el.querySelector('.img-slider-line');
-            var dragging = false;
-
-            function move(e) {
-                var rect = el.getBoundingClientRect();
-                var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-                var pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
-                top.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-                line.style.left = pct + '%';
-            }
-
-            el.addEventListener('mousedown', function(e) { e.preventDefault(); dragging = true; move(e); });
-            el.addEventListener('touchstart', function(e) { dragging = true; move(e); }, {passive: true});
-            window.addEventListener('mousemove', function(e) { if (dragging) move(e); });
-            window.addEventListener('touchmove', function(e) { if (dragging) move(e); }, {passive: true});
-            window.addEventListener('mouseup', function() { dragging = false; });
-            window.addEventListener('touchend', function() { dragging = false; });
-        });
-      </script>
     </section>
 
     <section class="section">
@@ -482,19 +414,19 @@
       </div>
 
         <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column">
-                <p class="has-text-centered has-text-weight-bold mb-2">Kitti Seq 00 (Ours)</p>
-                  <img src="static/images/traj_alignment_sim3_nvenc_00.png" draggable="false">
-                <p class="has-text-centered has-text-weight-bold mb-2">Kitti Seq 00 (Baseline)</p>
-                  <img src="static/images/traj_alignment_sim3_exhaustive_00.png" draggable="false">
+        <div class="columns is-centered is-vcentered">
+            <div class="column has-text-centered">
+                <p class="has-text-weight-bold mb-2">Kitti Seq 00 (Ours)</p>
+                <img src="static/images/traj_alignment_sim3_nvenc_00.png" draggable="false">
+                <p class="has-text-weight-bold mb-2 mt-4">Kitti Seq 00 (Baseline)</p>
+                <img src="static/images/traj_alignment_sim3_exhaustive_00.png" draggable="false">
             </div>
-  
-            <div class="column">
-              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Kitti Seq 10 (Ours)</p>
-                  <img src="static/images/traj_alignment_sim3_nvenc_10.png" draggable="false">
-              <p class="has-text-centered has-text-weight-bold mb-2 mt-5">Kitti Seq 10 (Baseline)</p>
-                  <img src="static/images/traj_alignment_sim3_exhaustive_10.png" draggable="false">
+
+            <div class="column has-text-centered">
+                <p class="has-text-weight-bold mb-2">Kitti Seq 10 (Ours)</p>
+                <img src="static/images/traj_alignment_sim3_nvenc_10.png" draggable="false">
+                <p class="has-text-weight-bold mb-2 mt-4">Kitti Seq 10 (Baseline)</p>
+                <img src="static/images/traj_alignment_sim3_exhaustive_10.png" draggable="false">
             </div>
         </div>
         </div>
@@ -542,11 +474,14 @@
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3">Acknowledgments and Funding</h2>
-            <div class="is-size-5 publication-authors" style="display: flex; align-items: center; justify-content: center;">
+            <div class="is-size-5 logo-funding-agencies" style="display: flex; align-items: center; justify-content: center;">
+              <!-- Logo for funding agencies -->
               <a href="https://www.upf.edu/web/emerald" style="margin-right: 15px;"><img style="width: 10vw; max-width: 200px; min-width: 100px;" src="static/images/emerald.svg"></a>
               <a href="https://about.google/" style="margin-right: 15px;" ><img style="width: 10vw; max-width: 200px; min-width: 100px;" src="static/images/Google.png"></a>
               <a><img style="width: 5vw; max-width: 200px; min-width: 50px;" src="static/images/youtube.png"></a>
+              <!-- -->
             </div>
+            <!-- Funding acknowledgement text -->
             <p>
               This work was funded by the Horizon CL4 2022, EU Project Emerald, 101119800; and YouTube & Google Faculty Awards.
             </p>
@@ -607,7 +542,74 @@
     </footer>
     
     
-    
+    <style>
+      .img-slider {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          cursor: col-resize;
+          user-select: none;
+          border-radius: 6px;
+      }
+      .img-slider > img:first-child {
+          display: block;
+          width: 100%;
+      }
+      .img-slider .img-top {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+      }
+      .img-slider-line {
+          position: absolute;
+          top: 0;
+          width: 3px;
+          height: 100%;
+          background: #fff;
+          transform: translateX(-50%);
+          z-index: 10;
+          box-shadow: 0 0 6px rgba(0,0,0,0.5);
+          pointer-events: none;
+      }
+      .img-slider-label-left,
+      .img-slider-label-right {
+          position: absolute;
+          bottom: 8px;
+          padding: 3px 8px;
+          background: rgba(0,0,0,0.6);
+          color: #fff;
+          font-size: 12px;
+          border-radius: 3px;
+          pointer-events: none;
+          z-index: 11;
+      }
+      .img-slider-label-left  { left: 8px; }
+      .img-slider-label-right { right: 8px; }
+    </style>
+
+    <script>
+      document.querySelectorAll('.img-slider').forEach(function(el) {
+          var top = el.querySelector('.img-top');
+          var line = el.querySelector('.img-slider-line');
+          var dragging = false;
+
+          function move(e) {
+              var rect = el.getBoundingClientRect();
+              var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+              var pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+              top.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+              line.style.left = pct + '%';
+          }
+
+          el.addEventListener('mousedown', function(e) { e.preventDefault(); dragging = true; move(e); });
+          el.addEventListener('touchstart', function(e) { dragging = true; move(e); }, {passive: true});
+          window.addEventListener('mousemove', function(e) { if (dragging) move(e); });
+          window.addEventListener('touchmove', function(e) { if (dragging) move(e); }, {passive: true});
+          window.addEventListener('mouseup', function() { dragging = false; });
+          window.addEventListener('touchend', function() { dragging = false; });
+      });
+    </script>
     
     
     </body>
